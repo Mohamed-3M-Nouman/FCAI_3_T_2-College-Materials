@@ -1,0 +1,52 @@
+import time
+import pandas as pd
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
+# Setup Chrome options
+chrome_options = Options()
+# chrome_options.add_argument("--headless") # Uncomment to run in the background
+
+# Initialize the WebDriver
+driver = webdriver.Chrome(options=chrome_options)
+
+# Target URL for the General Educational Pathway (TOS page)
+url = "https://niepd.futurex.sa/tos"
+
+print("Opening the website to extract General Pathway programs...")
+driver.get(url)
+
+# Wait for the page to load completely
+time.sleep(5) 
+
+# Extract program titles
+# We search for heading elements or elements containing the program names
+cards = driver.find_elements(By.XPATH, "//h3 | //h2 | //div[contains(@class, 'title')]")
+
+program_names = []
+for card in cards:
+    text = card.text.strip()
+    # Avoid empty strings and duplicates, and filter out unrelated text
+    if text and len(text) > 5 and text not in program_names:
+        program_names.append(text)
+
+# Close the browser instance
+driver.quit()
+
+print(f"Successfully extracted {len(program_names)} programs.")
+
+# Export the extracted data to an Excel file
+if program_names:
+    # Create a pandas DataFrame
+    df = pd.DataFrame(program_names, columns=["Program Name"])
+    
+    # Define the output Excel file name
+    excel_filename = R"C:\Users\anew3\Desktop\New folder\NIEPD_General_Pathway.xlsx"
+    
+    # Save to Excel using openpyxl engine
+    df.to_excel(excel_filename, index=False, engine='openpyxl')
+    
+    print(f"Data has been successfully saved to '{excel_filename}'.")
+else:
+    print("No programs were found. Please check the website structure.")
